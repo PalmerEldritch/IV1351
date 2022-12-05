@@ -9,18 +9,18 @@ Contains SQL scripts for creating the database Soundgood and for inserting sampl
 
 
 - _Task 1, Lessons / month over a year_
-	- lessons_per_month &emsp; &emsp; &emsp;  line 376
-	- individual_lessons_per_month &emsp; line 424
-	- group_lessons_per_month &emsp; line 367
-	- ensembles_per_month &emsp; line 309
+	- lessons_per_month &emsp;  __line 376__
+	- individual_lessons_per_month &emsp; __line 424__
+	- group_lessons_per_month &emsp; __line 367__
+	- ensembles_per_month &emsp; __line 309__
   
 - _Task 2, Number of students with no, 1, 2 siblings respectively_
-	- number_of_siblings &emsp; line 591
-	- no_siblings &emsp; line 576
-	- one_sibling &emsp; line 605
-	- two_siblings &emsp; line 790
+	- number_of_siblings &emsp; __line 591__
+	- no_siblings &emsp; __line 576__
+	- one_sibling &emsp; __line 605__
+	- two_siblings &emsp; __line 790__
   
 - _Task 3, Instructor monthly lessons > k_
-	- instructor_monthly_lessons &emsp; line 453
+	- instructor_monthly_lessons &emsp; __line 453__
 
 
