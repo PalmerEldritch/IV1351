@@ -1,0 +1,11 @@
+INSERT INTO lesson_price (lesson_type,level,price)
+VALUES
+  ('group',     'beginner',     150.00),
+  ('group',     'intermediate', 150.00),
+  ('group',     'advanced',     250.00),
+  ('ensemble',  'beginner',     200.00),
+  ('ensemble',  'intermediate', 200.00),
+  ('ensemble',  'advanced',     300.00),
+  ('individual','beginner',     110.00),
+  ('individual','intermediate', 110.00),
+  ('individual','advanced',     210.00);
