@@ -7,22 +7,20 @@ Contains SQL scripts for creating the database Soundgood and for inserting sampl
 - Queries for the tasks are found in queries.sql. 
 - Some queries are dependent on views. Code for these are in the soundgood_dump.sql file. Code line references for these views are in the list below
 
-- Task 1, Lessons / month over a year
-	- Uses views:
-	-	lessons_per_month		line 376
-	-	individual_lessons_per_month	line 424
-	-	group_lessons_per_month		line 367
-	-	ensembles_per_month		line 309
+
+- _Task 1, Lessons / month over a year_
+	- lessons_per_month &emsp; line 376
+	- individual_lessons_per_month &emsp; line 424
+	- group_lessons_per_month &emsp; line 367
+	- ensembles_per_month &emsp; line 309
   
-- Task 2, Number of students with no, 1, 2 siblings respectively
-	- Uses views: 
-	-	number_of_siblings		line 591
-	-	no_siblings			line 576
-	-	one_sibling			line 605
-	-	two_siblings			line 790
+- _Task 2, Number of students with no, 1, 2 siblings respectively_
+	- number_of_siblings &emsp; line 591
+	- no_siblings &emsp; line 576
+	- one_sibling &emsp; line 605
+	- two_siblings &emsp; line 790
   
-- Task 3, Instructor monthly lessons > k
-	- Uses views: 
-	-	instructor_monthly_lessons	line 453
+- _Task 3, Instructor monthly lessons > k_
+	- instructor_monthly_lessons &emsp; line 453
 
 
