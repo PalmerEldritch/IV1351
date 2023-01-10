@@ -9,7 +9,7 @@ Contains SQL scripts for creating the database Soundgood and for inserting sampl
 
 
 - _Task 1, Lessons / month over a year_
-	- lessons_per_month &emsp;  __line 376__
+	- lessons_per_month &emsp;  __line 528__
 	- individual_lessons_per_month &emsp; __line 424__
 	- group_lessons_per_month &emsp; __line 367__
 	- ensembles_per_month &emsp; __line 309__
