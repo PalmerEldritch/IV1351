@@ -307,11 +307,13 @@ ALTER TABLE public.time_slot OWNER TO postgres;
 --
 
 CREATE VIEW public.ensembles_per_month AS
- SELECT EXTRACT(month FROM time_slot.datetime) AS "extract",
+ SELECT EXTRACT(year FROM time_slot.datetime) AS year,
+    EXTRACT(month FROM time_slot.datetime) AS month,
     count(EXTRACT(month FROM time_slot.datetime)) AS count
-   FROM (public.time_slot
-     JOIN public.ensemble ON ((time_slot.id = ensemble.time_slot_id)))
-  GROUP BY (EXTRACT(month FROM time_slot.datetime))
+   FROM time_slot
+     JOIN ensemble ON time_slot.id = ensemble.time_slot_id
+  WHERE EXTRACT(year FROM time_slot.datetime) = 2022::numeric
+  GROUP BY (EXTRACT(year FROM time_slot.datetime)), (EXTRACT(month FROM time_slot.datetime))
   ORDER BY (EXTRACT(month FROM time_slot.datetime));
 
 
@@ -365,11 +367,13 @@ ALTER SEQUENCE public.group_lesson_id_seq OWNED BY public.group_lesson.id;
 --
 
 CREATE VIEW public.group_lessons_per_month AS
- SELECT EXTRACT(month FROM time_slot.datetime) AS "extract",
+ SELECT EXTRACT(year FROM time_slot.datetime) AS year,
+    EXTRACT(month FROM time_slot.datetime) AS month,
     count(EXTRACT(month FROM time_slot.datetime)) AS count
-   FROM (public.time_slot
-     JOIN public.group_lesson ON ((time_slot.id = group_lesson.time_slot_id)))
-  GROUP BY (EXTRACT(month FROM time_slot.datetime))
+   FROM time_slot
+     JOIN group_lesson ON time_slot.id = group_lesson.time_slot_id
+  WHERE EXTRACT(year FROM time_slot.datetime) = 2022::numeric
+  GROUP BY (EXTRACT(year FROM time_slot.datetime)), (EXTRACT(month FROM time_slot.datetime))
   ORDER BY (EXTRACT(month FROM time_slot.datetime));
 
 
@@ -422,11 +426,13 @@ ALTER SEQUENCE public.individual_lesson_id_seq OWNED BY public.individual_lesson
 --
 
 CREATE VIEW public.individual_lessons_per_month AS
- SELECT EXTRACT(month FROM time_slot.datetime) AS "extract",
+ SELECT EXTRACT(year FROM time_slot.datetime) AS year,
+    EXTRACT(month FROM time_slot.datetime) AS month,
     count(EXTRACT(month FROM time_slot.datetime)) AS count
-   FROM (public.time_slot
-     JOIN public.individual_lesson ON ((time_slot.id = individual_lesson.time_slot_id)))
-  GROUP BY (EXTRACT(month FROM time_slot.datetime))
+   FROM time_slot
+     JOIN individual_lesson ON time_slot.id = individual_lesson.time_slot_id
+  WHERE EXTRACT(year FROM time_slot.datetime) = 2022::numeric
+  GROUP BY (EXTRACT(year FROM time_slot.datetime)), (EXTRACT(month FROM time_slot.datetime))
   ORDER BY (EXTRACT(month FROM time_slot.datetime));
 
 
@@ -520,10 +526,12 @@ ALTER SEQUENCE public.lesson_price_id_seq OWNED BY public.lesson_price.id;
 --
 
 CREATE VIEW public.lessons_per_month AS
- SELECT EXTRACT(month FROM time_slot.datetime) AS "extract",
+ SELECT EXTRACT(year FROM time_slot.datetime) AS year,
+    EXTRACT(month FROM time_slot.datetime) AS month,
     count(EXTRACT(month FROM time_slot.datetime)) AS count
-   FROM public.time_slot
-  GROUP BY (EXTRACT(month FROM time_slot.datetime))
+   FROM time_slot
+  WHERE EXTRACT(year FROM time_slot.datetime) = 2022::numeric
+  GROUP BY (EXTRACT(year FROM time_slot.datetime)), (EXTRACT(month FROM time_slot.datetime))
   ORDER BY (EXTRACT(month FROM time_slot.datetime));
 
 
