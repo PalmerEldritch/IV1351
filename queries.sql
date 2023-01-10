@@ -3,7 +3,7 @@
 --Task 1, Lessons / month over a year
 	-- Code for views are in the soundgood_dump.sql file.
 	-- Uses views:
-	--	lessons_per_month				line 376
+	--	lessons_per_month				line 528
 	--	individual_lessons_per_month	line 424
 	--	group_lessons_per_month			line 367
 	--	ensembles_per_month				line 309
@@ -14,10 +14,10 @@ SELECT 	months.month,
 		group_lessons_per_month.count as "# group lessons per month",
 		ensembles_per_month.count  as "# ensembles per month"
 from lessons_per_month
-	inner join months on months.nr = lessons_per_month.extract
- 	inner join individual_lessons_per_month on lessons_per_month.extract = individual_lessons_per_month.extract
-	inner join group_lessons_per_month on individual_lessons_per_month.extract = group_lessons_per_month.extract
-	inner join ensembles_per_month on group_lessons_per_month.extract = ensembles_per_month.extract
+	inner join months on months.nr = lessons_per_month.month
+ 	inner join individual_lessons_per_month on lessons_per_month.month = individual_lessons_per_month.month
+	inner join group_lessons_per_month on individual_lessons_per_month.month = group_lessons_per_month.month
+	inner join ensembles_per_month on group_lessons_per_month.month = ensembles_per_month.month
 
 --Task 2, Number of students with no, 1, 2 siblings respectively
 	-- Code for views are in the soundgood_dump.sql file.
